@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+       
+       function getComputerChoice(){
+    let computerGuess = Math.floor(Math.random() *3);
+    switch(guess)
+    {
+        case 0: 
+         guess == 0;
+         return "Rock";
+         break; 
+        case 1: 
+         guess == 1; 
+         return "Scissors"
+         break;
+        case 2: 
+         guess == 2;
+         return "Paper"
+         break;
+    }
+
+}
+
+let loss = "Computer Wins"
+let win = "Player Wins!"
+let draw = "It's a Draw!"
+let computerW = 0;
+let playerW = 0; 
+let decision = "null"
+
+function playRound(playerSelection)
+{
+    if(getComputerChoice() == "Rock" && playerSelection == "Scissors")
+    {
+        decision = "Loss"
+        return loss
+    }else if(getComputerChoice() == "Scissors" && playerSelection == "Paper"){
+        decision = "Loss"
+        return loss
+    }else if(getComputerChoice() == "Paper" && playerSelection == "Rock"){
+        decision = "Loss"
+        return loss
+    }else if(getComputerChoice() == "Rock" && playerSelection == "Scissors"){
+        decision = "Win"
+        return win
+    }else if(getComputerChoice() == "Scissors" && playerSelection == "Paper"){
+        decision = "Win"
+        return win
+    }else if(getComputerChoice() == "Paper" && playerSelection == "Rock"){
+        decision = "Win"
+        return win
+    }else{
+        return draw
+    }
+}
+    for(let i = 0; i <=5; i++)
+    {
+     if(decision == "win")
+     {
+        playerW++
+     }else if(decision == "loss")
+     {
+        computerW++
+     }
+
+    playerSelection = String(prompt("Enter Rock, Paper, or Scissors"))
+    console.log(getCmputerChoice())
+    console.log(playRound())    
+    }
+
+    if(playerW > computerW)
+    {
+        console.log("Player has won the game!")
+    }else if(computerW > playerW)
+    {
+        console.log("Computer has won the game!")
+    }else if(computerW == playerW)
+    {
+        console.log("No one won!")
+    }
+
+    console.log("If you wish to replay, click refresh! Thanks for playing!")
+  
+  </script>
+</body>
+</html>
